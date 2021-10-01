@@ -1,0 +1,58 @@
+Package: cytoKernel
+Type: Package
+Title: Differential expression using kernel-based score test
+Version: 0.99.0
+Date: 2021-09-27
+Authors@R:
+    c(person("Tusharkanti", "Ghosh",
+           email = "tusharkantighosh30@gmail.com",
+           role = c("aut", "cre")),
+    person("Victor", "Lui",
+           role = c("aut")),
+    person("Pratyaydipta", "Rudra",
+           role = c("aut")),
+    person("Souvik", "Seal",
+           role = c("aut")), 
+    person("Thao", "Vu",
+           role = c("aut")),
+    person("Elena", "Hsieh",
+           role = c("aut")),
+    person("Debashis", "Ghosh",
+           role = c("aut", "cph")))
+Imports: Rcpp, SummarizedExperiment, utils,
+     methods, ComplexHeatmap, circlize,
+     ashr, data.table, BiocParallel, dplyr,
+     stats, magrittr, rlang, S4Vectors
+LinkingTo: Rcpp
+Depends: R (>= 4.1)
+Suggests: 
+    knitr,
+    rmarkdown,
+    BiocStyle,
+    testthat
+VignetteBuilder: knitr
+Encoding: UTF-8
+License: GPL-3
+Description: cytoKernel implements a kernel-based score test to
+             identify differentially expressed features
+             in high-dimensional biological experiments. This
+             approach can be applied across many different
+             high-dimensional biological data including gene 
+             expression data and dimensionally reduced 
+             cytometry-based marker expression data. 
+             In this R package,
+             we implement functions that compute the 
+             feature-wise p values and their corresponding 
+             adjusted p values. Additionally, it also computes
+             the feature-wise shrunk effect sizes and 
+             their corresponding shrunken effect size.
+             Further, it calculates the percent of 
+             differentially expressed features and plots 
+             user-friendly heatmap of the top differentially
+             expressed features on the rows and samples on the
+             columns.
+biocViews: ImmunoOncology, Proteomics, SingleCell, Software, 
+           OneChannel, FlowCytometry, DifferentialExpression,
+           GeneExpression, Clustering
+BugReports: https://github.com/Ghoshlab/cytoKernel/issues
+RoxygenNote: 7.1.2
