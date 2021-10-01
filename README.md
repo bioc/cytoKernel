@@ -3,7 +3,7 @@ cytoKernel
 
 ### `cytoKernel`: An R/Bioconductor package for differential expression using kernel-based score test for high-dimensional biological data.
 
-`cytoKernel` measures the compute the 
+`cytoKernel` computes the 
 feature-wise p values and their corresponding 
 adjusted p values per feature in high-dimensional biological experiments.
 
@@ -67,7 +67,7 @@ Individual slots can be extracted using accessor methods:
 
     CytoKFeatures(CytoKOutput) # extracts the data.frame with shrunk effect size, shrunk effect size sd, unadjusted p value and adjusted p value for each feature
     
-     CytoKFeaturesOrdered(CytoKOutput) # extracts the data.frame with shrunk effect size, shrunk effect size sd, unadjusted p value and adjusted p value for each feature ordered by unadjusted p value from low to high
+     CytoKFeaturesOrdered(CytoKOutput) # extracts the data.frame with shrunken effect size, shrunken effect size sd, unadjusted p value and adjusted p value for each feature ordered by unadjusted p value from low to high
      
      CytoKDEfeatures(CytoKOutput) # extracts the percent of differentially expressed features
     
