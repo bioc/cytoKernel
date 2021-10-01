@@ -1,0 +1,70 @@
+---
+title: "The cytoKernel user's guide"
+author:
+- name: Tusharkanti Ghosh
+  affiliation: Colorado School of Public Health
+- name: Victor Lui
+  affiliation: Anschutz Medical Campus
+- name: Pratyaydipta Rudra
+  affiliation: Oklahoma State University 
+- name: Souvik Seal
+  affiliation: Colorado School of Public Health
+- name: Thao Vu
+  affiliation: Colorado School of Public Health
+- name: Elena Hsieh
+  affiliation: Anschutz Medical Campus
+- name: Debashis Ghosh
+  affiliation: Colorado School of Public Health
+output: 
+  BiocStyle::html_document:
+    highlight: "tango"
+    code_folding: show
+    toc: true
+    toc_float: 
+      collapsed: false
+package: cytoKernel
+abstract: cytoKernel (Differential Expression Analysis using Kernel-based Score test) is a nonlinear method based approach that detects differentially expressed features for high-dimensional biological data.
+#citation_package: natbib
+#bibliography: cytoKernel.bib
+vignette: |
+  %\VignetteIndexEntry{The CytoK user's guide}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}  
+---
+
+```{r, include=FALSE, echo=FALSE}
+# date: "`r doc_date()`"
+# "`r pkg_ver('BiocStyle')`"
+# <style>
+#     pre {
+#     white-space: pre !important;
+#     overflow-y: scroll !important;
+#     height: 50vh !important;
+#     }
+# </style>
+```
+---
+
+
+```{r, echo=FALSE, results="hide", message=FALSE}
+require(knitr)
+opts_chunk$set(error=FALSE, message=FALSE, warning=FALSE)
+```
+
+```{r style, echo=FALSE, results='asis'}
+BiocStyle::markdown()
+```
+
+
+# Introduction
+
+The majority of statistical strategies used in differential expression analysis of high-dimensional biological data (e.g., gene expression, CyTOF) are based on linear models or (analysis of variance). Linear models are favored in many biological problems mainly due to their ease of use and interpretability. However, some biological problems (e.g., gene expression, CyTOF) often require nonlinear models as linear models might be insufficient to capture the relationship among the co-expression features (e.g., relationships among signaling markers within a cell subpopulation in CyTOF data). Kernel-based approaches extend the class of linear models to nonlinear models in a computationally tractable manner. Additionally, kernel-based approaches assume a more general relationship based on a Hilbert space of functions spanned by a certain kernel function instead of assuming a linear functional relationship.
+
+ In this vignette, we introduce a differential expression analysis of high-dimensional biological data using kernel based score test, referred to as **kernel-based differential analysis** (**cytoKernel**), which can identify differentially expressed features. The `cytoKernel` R-package contains the `CytoK()` function, which computes the adjusted p value for each feature based on two groups. Further, the package calculates the shrunk effective size and its corresponding effective size standard deviation (sd) using the Adaptive Shrinkage (ash) procedure @Stephens16. We demonstrate with an example data set that the Differential expression analysis using Kernel-based Score test (cytoKernel) procedure can be adapted to flow and mass cytometry experiments along with other biological experiments (e.g., gene expression, RNASeq).
+
+# Getting Started
+
+Load the package in R
+```{r load-lib, message=FALSE}
+library(cytoKernel) 
+```
