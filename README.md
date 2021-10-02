@@ -5,18 +5,18 @@ cytoKernel
 
 `cytoKernel` computes the 
 feature-wise p values and their corresponding 
-adjusted p values per feature in high-dimensional biological experiments.
+adjusted p values in high-dimensional biological experiments.
 
 ### Method
 
 > Liu D, Lin X, Ghosh D."Semiparametric regression of
 > multi-dimensional genetic pathway data: least-squares 
-> kernel machines and linear mixed models". Biometrics.        > 2007;63(4):1079-1088.
+> kernel machines and linear mixed models". Biometrics. 2007;63(4):1079-1088.
 > <doi:10.1111/j.1541-0420.2007.00799.x1028-1039>
 
 > Zhan X, Patterson AD, Ghosh D. "Kernel approaches for   
 > differential expression analysis of mass spectrometry-based
-> metabolomics data". BMC Bioinformatics. 2015;16:77. Published > 2015 Mar 11. 
+> metabolomics data". BMC Bioinformatics. 2015;16:77. Published 2015 Mar 11. 
 > <doi:10.1186/s12859-015-0506-3>
 
 > Liu D, Ghosh D, Lin X. "Estimation and testing for the effect > of a genetic pathway on a disease outcome using logistic
@@ -81,7 +81,7 @@ The heatmap of the expressed matrix of features on rows ordered by the adjusted 
 plotted using the `plotCytoK()` function.
 
      plotCytoK(object = CytoKOutput,
-     group_factor =groupSamples,,topK=K...)
+     group_factor =groupSamples,topK=K,...)
 
 For more details, see `vignettes`.
 
